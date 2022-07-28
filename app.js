@@ -7,6 +7,9 @@ const session = require('express-session');
 
 const app = express();
 
+
+app.use(express.static(__dirname + '/public'));
+
 // Passport Config
 require('./config/passport')(passport);
 
@@ -28,6 +31,7 @@ app.set('view engine', 'ejs');
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
+
 
 // Express session
 app.use(
@@ -57,7 +61,7 @@ app.use(function(req, res, next) {
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
 
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`Server running on  ${PORT}`));
-

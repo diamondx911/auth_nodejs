@@ -1,3 +1,56 @@
 <h1 class="mt-4">Dashboard</h1>
 <p class="lead mb-3">Welcome <%= user.name %></p>
+<p>this is your unique ID: <%= user._id %></p>
+
+<link rel="stylesheet" href="stylesheets/style.css">
+
+<!--I will need this for pagination //https://evdokimovm.github.io/javascript/nodejs/mongodb/pagination/expressjs/ejs/bootstrap/2017/08/20/create-pagination-with-nodejs-mongodb-express-and-ejs-step-by-step-from-scratch.html-->
+
+
+<div class="card border-primary mb-3" style="max-width: 40rem;">
+    <div class="card-header">Enter trip information</div>
+        <div class="card-body">
+            <form autocomplete="off" action="/dashboard/addtrip" method="POST">
+                <div class="autocomplete" style="width:300px;">
+                    <label for="birthday">date du voyage:</label>
+                    <input type="date" id="trip_date" name="trip_date">
+                    <div>select arrival city
+                        <input id="Input_arrival" type="text" name="arrival_city" placeholder="city">
+                    </div>
+                    <div>select departure city
+                        <input id="Input_departure" type="text" name="departure_city" placeholder="city">
+                    </div>
+                </div>
+                    <p></p>
+                    <p></p>
+                <input type="submit">
+    </div>
+            </form>
+    
+</div>
+
+<p></p>
+<p></p>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Column heading</th>
+        <th scope="col">Column heading</th>
+        <th scope="col">Column heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active">
+        <th scope="row">Active</th>
+        <td>Column content</td>
+        <td>Column content</td>
+        <td>Column content</td>
+      </tr>
+      <tr>
+    <tbody>
+</table>
+
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
+<script src="/cities.js"></script>
