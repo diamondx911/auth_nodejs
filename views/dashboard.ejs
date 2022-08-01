@@ -1,6 +1,8 @@
 <h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= user.name %></p>
+
+
 <p>this is your unique ID: <%= user._id %></p>
+
 
 <link rel="stylesheet" href="stylesheets/style.css">
 
@@ -20,6 +22,9 @@
                     <div>select departure city
                         <input id="Input_departure" type="text" name="departure_city" placeholder="city">
                     </div>
+                    <div>
+                      <input id="<%= user._id %>" type="hidden" name="driver_id" value="<%= user._id %>">
+                  </div>
                 </div>
                     <p></p>
                     <p></p>
@@ -30,26 +35,27 @@
 </div>
 
 <p></p>
+<h3>You have <%= shit.length %> trip coming. Find informations below:</h3>
 <p></p>
 
 <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">Type</th>
-        <th scope="col">Column heading</th>
-        <th scope="col">Column heading</th>
-        <th scope="col">Column heading</th>
+        <th scope="col">Date</th>
+        <th scope="col">Depature city</th>
+        <th scope="col">Arrival city</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="table-active">
-        <th scope="row">Active</th>
-        <td>Column content</td>
-        <td>Column content</td>
-        <td>Column content</td>
-      </tr>
-      <tr>
-    <tbody>
+      <ul>
+        <% for(var i=0; i<shit.length; i++) {%>
+           <th scope="row"><%= shit[i].date %></th>
+           <td><%= shit[i].arrival_city %></td>
+           <td><%= shit[i].departure_city %></td>
+          </tr>
+        <% } %>
+      </ul>
+    </tbody>
 </table>
 
 <a href="/users/logout" class="btn btn-secondary">Logout</a>

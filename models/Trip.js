@@ -12,6 +12,9 @@ const TripSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
+  },
+  driver_id: {
+    type: String,
   }
 });
 
