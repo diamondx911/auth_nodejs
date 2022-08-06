@@ -64,5 +64,21 @@
   </tbody>
 </table>
 
+<% for(var i=0; i<shit.length; i++) {%>
+  <div class="cards">
+    <div class="content">
+      <h3><%= shit[i].trip_date %></h3>
+      <h3><%= shit[i].arrival_city %> <i class='fas fa-arrow-right' style='font-size:23px'></i> <%= shit[i].departure_city %> </h3>
+      
+      <h3>Places disponibles: 3</h3>
+      <h3>80 DH</h3>
+    </div>
+  </div>
+  <br>
+  <% } %>
+
+
+
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
 <script src="/cities.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>

@@ -1,5 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;900&display=swap');
+
+body {
+  background: #f2f2f2;
+}
+
+.cards  {
+  justify-content: space-evenly;
+  left: 50%;
+  top: 50%;
+  height: 150px;
+  width: 100%;
+  background: #f2f2f2;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  padding: 40px;
+  font-family: 'Merriweather', serif;
+}
+
 h1 {
-    background-color: rgb(243, 243, 0);
+  font-weight: 900;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 300;
 }
 
 form {
