@@ -18,6 +18,8 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "mdb-ui-kit": "^4.3.0",
+    "moment": "^2.29.4",
+    "momentjs": "^2.0.0",
     "mongodb": "^4.8.0",
     "mongoose": "^6.4.4",
     "nodemon": "^2.0.19",

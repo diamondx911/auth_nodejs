@@ -1,7 +1,8 @@
 <h1 class="mt-4">Dashboard</h1>
 
 
-<p>this is your unique ID: <%= user._id %></p>
+<p>Hello Mr. : <%= user.name %>
+</p>
 
 
 <link rel="stylesheet" href="stylesheets/style.css">
@@ -9,29 +10,28 @@
 <!--I will need this for pagination //https://evdokimovm.github.io/javascript/nodejs/mongodb/pagination/expressjs/ejs/bootstrap/2017/08/20/create-pagination-with-nodejs-mongodb-express-and-ejs-step-by-step-from-scratch.html-->
 
 
-<div class="card border-primary mb-3" style="max-width: 40rem;">
-    <div class="card-header">Enter trip information</div>
-        <div class="card-body">
-            <form autocomplete="off" action="/dashboard/addtrip" method="POST">
-                <div class="autocomplete" style="width:300px;">
-                    <label for="birthday">date du voyage:</label>
-                    <input type="date" id="trip_date" name="trip_date">
-                    <div>select arrival city
-                        <input id="Input_arrival" type="text" name="arrival_city" placeholder="city">
-                    </div>
-                    <div>select departure city
-                        <input id="Input_departure" type="text" name="departure_city" placeholder="city">
-                    </div>
-                    <div>
-                      <input id="<%= user._id %>" type="hidden" name="driver_id" value="<%= user._id %>">
-                  </div>
-                </div>
-                    <p></p>
-                    <p></p>
-                <input type="submit">
-    </div>
-            </form>
-    
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header">Enter trip information</div>
+  <div class="card-body">
+    <form autocomplete="off" action="/dashboard/addtrip" method="POST">
+      <div class="autocomplete" style="width:300px;">
+        <label for="birthday">date du voyage:</label>
+        <input type="date" id="trip_date" name="trip_date">
+          <div>select arrival city
+            <input id="Input_arrival" type="text" name="arrival_city" placeholder="city">
+          </div>
+          <div>select departure city
+            <input id="Input_departure" type="text" name="departure_city" placeholder="city">
+          </div>
+          <div>
+            <input id="<%= user._id %>" type="hidden" name="driver_id" value="<%= user._id %>">
+          </div>
+          <div>
+            <input type="submit">
+          </div>
+      </div>
+    </form>  
+  </div>
 </div>
 
 <p></p>
@@ -39,23 +39,29 @@
 <p></p>
 
 <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Date</th>
-        <th scope="col">Depature city</th>
-        <th scope="col">Arrival city</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ul>
-        <% for(var i=0; i<shit.length; i++) {%>
-           <th scope="row"><%= shit[i].date %></th>
-           <td><%= shit[i].arrival_city %></td>
-           <td><%= shit[i].departure_city %></td>
-          </tr>
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Depature city</th>
+      <th scope="col">Arrival city</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ul>
+      <% for(var i=0; i<shit.length; i++) {%>
+        <th scope="row">
+          <%= shit[i].trip_date %>
+        </th>
+        <td>
+          <%= shit[i].arrival_city %>
+        </td>
+        <td>
+          <%= shit[i].departure_city %>
+        </td>
+        </tr>
         <% } %>
-      </ul>
-    </tbody>
+    </ul>
+  </tbody>
 </table>
 
 <a href="/users/logout" class="btn btn-secondary">Logout</a>

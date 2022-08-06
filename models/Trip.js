@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 
 const TripSchema = new mongoose.Schema({
   departure_city: {
@@ -9,9 +10,8 @@ const TripSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  date: {
-    type: Date,
-    default: Date.now
+  trip_date: {
+    type: String
   },
   driver_id: {
     type: String,
